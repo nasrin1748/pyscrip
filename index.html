@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <link
+        rel="stylesheet"
+        href="https://pyscript.net/releases/2023.11.2/core.css"
+    />
+    <script
+        type="module"
+        src="https://pyscript.net/releases/2023.11.2/core.js"
+    ></script>
+</head>
+<body>
+        <button py-click="fun" id="get-time" class="py-button">Colourful_text</button>
+        <p id="fun"></p>
+
+        <script type="py" terminal>
+            from pyscript import display,HTML
+
+            def fun(event):
+                h = "\u001b[31mHello \u001b[0m \u001b[31mWorld! \u001b[0m"
+                print(h)
+                s = "\033[1;31;43m Hello \033[1;34;42m World! \u001b[0m"
+                print(s)
+                display(HTML('<p><label style="color: red;">Hello World!</label></p>'))
+                display(HTML('''
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.Hello {background-color: #ff9800;color: red} 
+.World {background-color: #04AA6D;color: lightblue} 
+</style>
+</head>
+<body>
+
+<span class="label Hello">Hello</span>
+<span class="label World">World!</span>
+
+</body>
+</html>
+'''))
+
+        </script>
+</body>
+</html>    
+
+
+
+
